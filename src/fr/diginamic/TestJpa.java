@@ -1,8 +1,11 @@
 package fr.diginamic;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import fr.diginamic.entites.Livre;
 
@@ -38,6 +41,12 @@ public class TestJpa {
 		if (livre != null) {
 			System.out.println("Livre recherché : " + livre);
 		}
+
+		// Requete SQL
+		TypedQuery<Livre> query = em.createQuery("Select l from Livre l", Livre.class);
+		List<Livre> livres = query.getResultList();
+
+		System.out.println(livres);
 
 	}
 
