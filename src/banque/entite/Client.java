@@ -25,21 +25,21 @@ public class Client {
 	@Column(name = "ID")
 	private Integer id;
 
-	@Column(name = "NOM")
+	@Column(name = "NOM", nullable = false)
 	private String nom;
 
-	@Column(name = "PRENOM")
+	@Column(name = "PRENOM", nullable = false)
 	private String prenom;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "DATE_NAISSANCE")
+	@Column(name = "DATE_NAISSANCE", nullable = false)
 	private Date dateNaissance;
 
 	@Embedded
 	private Adresse adresse;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_BANQUE")
+	@JoinColumn(name = "ID_BANQUE", nullable = false)
 	private Banque banque;
 
 	@ManyToMany(mappedBy = "clients")

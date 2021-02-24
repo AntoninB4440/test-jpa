@@ -26,17 +26,17 @@ public class Operation {
 	private Integer id;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "DATE")
+	@Column(name = "DATE", nullable = false)
 	private Date date;
 
-	@Column(name = "MONTANT")
+	@Column(name = "MONTANT", nullable = false)
 	private Double montant;
 
 	@Column(name = "MOTIF")
 	private String motif;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_COMPTE")
+	@JoinColumn(name = "ID_COMPTE", nullable = false)
 	private Compte compte;
 
 	/**

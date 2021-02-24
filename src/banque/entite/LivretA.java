@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "livret_A")
 public class LivretA extends Compte {
 
-	@Column(name = "TAUX")
+	@Column(name = "TAUX", nullable = false)
 	private Double taux;
 
 	/**

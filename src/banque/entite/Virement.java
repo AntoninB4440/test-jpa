@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name = "virement")
 public class Virement extends Operation {
 
-	@Column(name = "BENEFICIAIRE")
+	@Column(name = "BENEFICIAIRE", nullable = false)
 	private String beneficiaire;
 
 	/**

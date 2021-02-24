@@ -25,7 +25,7 @@ public class Compte {
 	@Column(name = "ID")
 	private Integer id;
 
-	@Column(name = "NUMERO")
+	@Column(name = "NUMERO", unique = true)
 	private String numero;
 
 	@Column(name = "SOLDE")
