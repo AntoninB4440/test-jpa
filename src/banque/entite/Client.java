@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -42,7 +43,8 @@ public class Client {
 	@JoinColumn(name = "ID_BANQUE", nullable = false)
 	private Banque banque;
 
-	@ManyToMany(mappedBy = "clients")
+	@ManyToMany
+	@JoinTable(name = "COMPTE_CLIENT", joinColumns = @JoinColumn(name = "ID_CLIENT", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_COMPTE", referencedColumnName = "ID"))
 	private List<Compte> comptes;
 
 	/**
@@ -58,13 +60,14 @@ public class Client {
 	 * @param adresse
 	 * @param banque
 	 */
-	public Client(String nom, String prenom, Date dateNaissance, Adresse adresse, Banque banque) {
+	public Client(String nom, String prenom, Date dateNaissance, Adresse adresse, Banque banque, List<Compte> comptes) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
 		this.banque = banque;
+		this.comptes = comptes;
 	}
 
 	/**

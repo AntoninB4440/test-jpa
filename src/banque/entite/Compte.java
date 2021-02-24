@@ -35,7 +35,7 @@ public class Compte {
 	@JoinTable(name = "COMPTE_CLIENT", joinColumns = @JoinColumn(name = "ID_COMPTE", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_CLIENT", referencedColumnName = "ID"))
 	private List<Client> clients;
 
-	@Column(name = "ID_CLIENT")
+	@Column(name = "ID_OPERATION")
 	@OneToMany(mappedBy = "compte")
 	private List<Operation> operations;
 
