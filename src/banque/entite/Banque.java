@@ -19,7 +19,7 @@ public class Banque {
 	@Column(name = "ID")
 	private Integer id;
 
-	@Column(name = "NOM_BANQUE", unique = true)
+	@Column(name = "NOM_BANQUE", unique = true, length = 255)
 	private String banque;
 
 	@Column(name = "ID_CLIENT")

@@ -26,10 +26,10 @@ public class Client {
 	@Column(name = "ID")
 	private Integer id;
 
-	@Column(name = "NOM", nullable = false)
+	@Column(name = "NOM", nullable = false, length = 255)
 	private String nom;
 
-	@Column(name = "PRENOM", nullable = false)
+	@Column(name = "PRENOM", nullable = false, length = 255)
 	private String prenom;
 
 	@Temporal(TemporalType.DATE)

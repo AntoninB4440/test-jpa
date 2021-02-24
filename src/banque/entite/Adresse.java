@@ -9,13 +9,13 @@ public class Adresse {
 	@Column(name = "NUMERO")
 	private Integer numero;
 
-	@Column(name = "RUE")
+	@Column(name = "RUE", length = 255)
 	private String rue;
 
 	@Column(name = "CODE_POSTAL")
 	private Integer codePostal;
 
-	@Column(name = "VILLE")
+	@Column(name = "VILLE", length = 255)
 	private String ville;
 
 	/**

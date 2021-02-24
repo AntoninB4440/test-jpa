@@ -13,10 +13,10 @@ import javax.persistence.TemporalType;
 public class AssuranceVie extends Compte {
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "DATE_FIN")
+	@Column(name = "DATE_FIN", nullable = false)
 	private Date dateFin;
 
-	@Column(name = "TAUX")
+	@Column(name = "TAUX", nullable = false, precision = 02)
 	private Double taux;
 
 	/**
