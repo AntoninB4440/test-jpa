@@ -19,7 +19,7 @@ public class Banque {
 	@Column(name = "ID")
 	private Integer id;
 
-	@Column(name = "NOM_BANQUE")
+	@Column(name = "NOM_BANQUE", unique = true)
 	private String banque;
 
 	@Column(name = "ID_CLIENT")
@@ -37,10 +37,9 @@ public class Banque {
 	 * @param banque
 	 * @param clients
 	 */
-	public Banque(String banque, List<Client> clients) {
+	public Banque(String banque) {
 		super();
 		this.banque = banque;
-		this.clients = clients;
 	}
 
 	/**

@@ -2,7 +2,10 @@ package banque;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+
+import banque.entite.Banque;
 
 public class TestBanqueJpa {
 
@@ -11,6 +14,17 @@ public class TestBanqueJpa {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("test_JPA_Banque");
 		EntityManager em = entityManagerFactory.createEntityManager();
+
+		EntityTransaction et = em.getTransaction();
+
+		et.begin();
+
+		Banque BNP = new Banque("Banque Postal");
+
+		em.persist(BNP);
+
+		et.commit();
+
 	}
 
 }
