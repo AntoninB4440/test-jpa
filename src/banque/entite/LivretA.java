@@ -1,4 +1,4 @@
-package banque.entites;
+package banque.entite;
 
 import java.util.List;
 

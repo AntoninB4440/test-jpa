@@ -1,4 +1,4 @@
-package banque.entites;
+package banque.entite;
 
 import java.time.LocalDate;
 import java.util.List;

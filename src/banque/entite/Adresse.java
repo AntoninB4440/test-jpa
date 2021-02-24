@@ -1,4 +1,4 @@
-package banque.entites;
+package banque.entite;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
