@@ -1,7 +1,6 @@
 package banque.entite;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,8 +33,8 @@ public class AssuranceVie extends Compte {
 	 * @param dateFin
 	 * @param taux
 	 */
-	public AssuranceVie(String numero, Double solde, List<Client> clients, Date dateFin, Double taux) {
-		super(numero, solde, clients);
+	public AssuranceVie(String numero, Double solde, Date dateFin, Double taux) {
+		super(numero, solde);
 		this.dateFin = dateFin;
 		this.taux = taux;
 	}

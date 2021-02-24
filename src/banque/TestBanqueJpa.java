@@ -19,8 +19,11 @@ public class TestBanqueJpa {
 
 		et.begin();
 
-		Banque BNP = new Banque("Banque Postal");
+		//// Ajout Banque
+		Banque CA = new Banque("Crédit agricol");
+		Banque BNP = new Banque("BNP");
 
+		em.persist(CA);
 		em.persist(BNP);
 
 		et.commit();

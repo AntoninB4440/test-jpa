@@ -51,7 +51,7 @@ public class Compte {
 	 * @param solde
 	 * @param clients
 	 */
-	public Compte(String numero, Double solde, List<Client> clients) {
+	public Compte(String numero, Double solde) {
 		super();
 		this.numero = numero;
 		this.solde = solde;

@@ -1,7 +1,5 @@
 package banque.entite;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -26,8 +24,8 @@ public class LivretA extends Compte {
 	 * @param clients
 	 * @param taux
 	 */
-	public LivretA(String numero, Double solde, List<Client> clients, Double taux) {
-		super(numero, solde, clients);
+	public LivretA(String numero, Double solde, Double taux) {
+		super(numero, solde);
 		this.taux = taux;
 	}
 
