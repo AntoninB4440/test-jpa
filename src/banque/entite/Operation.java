@@ -1,6 +1,6 @@
 package banque.entite;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Operation {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATE")
-	private LocalDateTime date;
+	private Date date;
 
 	@Column(name = "MONTANT")
 	private Double montant;
@@ -52,7 +52,7 @@ public class Operation {
 	 * @param motif
 	 * @param compte
 	 */
-	public Operation(LocalDateTime date, Double montant, String motif, Compte compte) {
+	public Operation(Date date, Double montant, String motif, Compte compte) {
 		super();
 		this.date = date;
 		this.montant = montant;
@@ -77,14 +77,14 @@ public class Operation {
 	/**
 	 * @return the date
 	 */
-	public LocalDateTime getDate() {
+	public Date getDate() {
 		return date;
 	}
 
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(LocalDateTime date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

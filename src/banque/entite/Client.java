@@ -1,6 +1,6 @@
 package banque.entite;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -25,12 +25,15 @@ public class Client {
 	@Column(name = "ID")
 	private Integer id;
 
+	@Column(name = "NOM")
+	private String nom;
+
 	@Column(name = "PRENOM")
 	private String prenom;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_NAISSANCE")
-	private LocalDate dateNaissance;
+	private Date dateNaissance;
 
 	@Embedded
 	private Adresse adresse;
@@ -55,8 +58,9 @@ public class Client {
 	 * @param adresse
 	 * @param banque
 	 */
-	public Client(String prenom, LocalDate dateNaissance, Adresse adresse, Banque banque) {
+	public Client(String nom, String prenom, Date dateNaissance, Adresse adresse, Banque banque) {
 		super();
+		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.adresse = adresse;
@@ -78,6 +82,20 @@ public class Client {
 	}
 
 	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
 	 * @return the prenom
 	 */
 	public String getPrenom() {
@@ -94,14 +112,14 @@ public class Client {
 	/**
 	 * @return the dateNaissance
 	 */
-	public LocalDate getDateNaissance() {
+	public Date getDateNaissance() {
 		return dateNaissance;
 	}
 
 	/**
 	 * @param dateNaissance the dateNaissance to set
 	 */
-	public void setDateNaissance(LocalDate dateNaissance) {
+	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 

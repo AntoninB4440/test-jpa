@@ -1,6 +1,6 @@
 package banque.entite;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Virement extends Operation {
 	 * @param compte
 	 * @param beneficiaire
 	 */
-	public Virement(LocalDateTime date, Double montant, String motif, Compte compte, String beneficiaire) {
+	public Virement(Date date, Double montant, String motif, Compte compte, String beneficiaire) {
 		super(date, montant, motif, compte);
 		this.beneficiaire = beneficiaire;
 	}
