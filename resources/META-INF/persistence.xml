@@ -2,6 +2,7 @@
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+
 <persistence-unit name="test_JPA" transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	<properties>
@@ -12,6 +13,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 		<property name="hibernate.show_sql" value="true" />
 	</properties>
 </persistence-unit>
+
 <persistence-unit name="test_JPA_Biblio" transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	<properties>
@@ -22,9 +24,21 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 		<property name="hibernate.show_sql" value="false" />
 	</properties>
 </persistence-unit>
+
 <persistence-unit name="test_JPA_Banque" transaction-type="RESOURCE_LOCAL">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	<!-- Import des classes automatiquement pour le package concerné-->
+	<class>banque.entite.Adresse</class>
+	<class>banque.entite.AssuranceVie</class>
+	<class>banque.entite.Banque</class>
+	<class>banque.entite.Client</class>
+	<class>banque.entite.Compte</class>
+	<class>banque.entite.LivretA</class>
+	<class>banque.entite.Operation</class>
+	<class>banque.entite.Virement</class>
 	<properties>
+		<!-- desactiver l'autodetection des classes de type @Entity -->
+		<property name="hibernate.archive.autodetection" value="" />
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/banqueJPA" />
 		<property name="javax.persistence.jdbc.user" value="root" />
 		<property name="javax.persistence.jdbc.password" value="" />
@@ -33,4 +47,5 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 		<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 	</properties>
 </persistence-unit>
+
 </persistence>

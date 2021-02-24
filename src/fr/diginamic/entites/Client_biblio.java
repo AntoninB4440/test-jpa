@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "client")
-public class Client {
+public class Client_biblio {
 
 	@Id
 	private Integer id;
@@ -24,7 +24,7 @@ public class Client {
 	@OneToMany(mappedBy = "client")
 	private List<Emprunt> emprunts;
 
-	public Client() {
+	public Client_biblio() {
 
 	}
 

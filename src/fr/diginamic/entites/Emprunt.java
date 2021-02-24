@@ -29,7 +29,7 @@ public class Emprunt {
 
 	@ManyToOne
 	@JoinColumn(name = "ID_CLIENT")
-	private Client client;
+	private Client_biblio client;
 
 	@ManyToMany(mappedBy = "emprunts")
 	private List<Livre> livres;
@@ -97,14 +97,14 @@ public class Emprunt {
 	/**
 	 * @return the client
 	 */
-	public Client getClient() {
+	public Client_biblio getClient() {
 		return client;
 	}
 
 	/**
 	 * @param client the client to set
 	 */
-	public void setClient(Client client) {
+	public void setClient(Client_biblio client) {
 		this.client = client;
 	}
 

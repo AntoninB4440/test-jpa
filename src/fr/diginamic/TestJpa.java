@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import fr.diginamic.entites.Client;
+import fr.diginamic.entites.Client_biblio;
 import fr.diginamic.entites.Emprunt;
 import fr.diginamic.entites.Livre;
 
@@ -42,7 +42,7 @@ public class TestJpa {
 
 		System.out.println();
 
-		Client client = em.find(Client.class, 1);
+		Client_biblio client = em.find(Client_biblio.class, 1);
 
 		System.out.println("Les emprunts du client : " + client.getId() + " sont :");
 		for (Emprunt emprunt2 : client.getEmprunts()) {
