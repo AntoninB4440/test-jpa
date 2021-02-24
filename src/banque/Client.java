@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "client")
@@ -26,6 +28,7 @@ public class Client {
 	@Column(name = "PRENOM")
 	private String prenom;
 
+	@Temporal(TemporalType.DATE)
 	@Column(name = "DATE_NAISSANCE")
 	private LocalDate dateNaissance;
 
